@@ -18,7 +18,7 @@ public class Tree {
     }
 
     private int innerBalanced(Node node) {
-        int lHeight = 0, rHeight = 0, max = 0;
+        int lHeight = 0, rHeight = 0;
         if (node.getLeft() != null) {
             lHeight = innerBalanced(node.getLeft());
         }
@@ -26,7 +26,7 @@ public class Tree {
             rHeight = innerBalanced(node.getRight());
         }
 
-        if (Math.abs(lHeight -  rHeight) <= 1) {
+        if (Math.abs(lHeight -  rHeight) <= 1 && lHeight != -1 && rHeight != -1) {
             return Math.max(lHeight, rHeight) + 1;
         } else {
             return -1;
