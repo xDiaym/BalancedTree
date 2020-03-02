@@ -40,7 +40,7 @@ public class Tree {
             } else {
                 innerInsert(start.getRight(), node);
             }
-        } else {
+        } else if (node.getValue() < start.getValue()) {
             if (start.getLeft() == null) {
                 start.setLeft(node);
             } else {
